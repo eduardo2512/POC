@@ -1,0 +1,27 @@
+{
+  "name": "Brazil",
+  "value": 100,
+  "children": [
+    {
+      "name": "Minas Gerais",
+      "value": 75,
+      "children": [
+        { "name": "Belo Horizonte", "value": 25 },
+        { "name": "Contagem", "value": 25 },
+        { "name": "Ouro Preto", "value": 25 }
+      ]
+    },
+    {
+      "name": "São Paulo",
+      "value": 75,
+      "children": [
+        { "name": "São Paulo", "value": 25 },
+        { "name": "Campinas", "value": 25 }
+      ]
+    },
+    {
+      "name": "Rio de Janeiro",
+      "value": 75
+    }
+  ]
+}
