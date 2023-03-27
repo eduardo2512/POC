@@ -1,0 +1,44 @@
+* {
+  margin: 0;
+  padding: 0;
+  outline: 0;
+  box-sizing: border-box;
+}
+
+*:focus {
+  outline: 0;
+}
+
+html,
+body,
+#root {
+  height: 100vh;
+}
+
+a,
+a:visited,
+a:hover,
+a:focus,
+a:active {
+  text-decoration: underline;
+  font-family: "Rubik";
+  font-style: normal;
+  font-weight: 700;
+  font-size: 1.375em;
+  line-height: 1.625em;
+  color: #5ec0c7;
+}
+
+ul {
+  list-style: none;
+}
+
+button {
+  cursor: pointer;
+}
+
+.App {
+  height: fit-content;
+  min-height: 100vh;
+  overflow-y: scroll;
+}
