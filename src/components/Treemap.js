@@ -5,8 +5,8 @@ const Treemap = () => {
 
   useEffect(() => {
     const margin = { top: 10, right: 10, bottom: 10, left: 10 },
-      width = 445 - margin.left - margin.right,
-      height = 445 - margin.top - margin.bottom;
+      width = 500 - margin.left - margin.right,
+      height = 500 - margin.top - margin.bottom;
 
     const svg = d3
       .select(svgRef.current)
