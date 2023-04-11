@@ -1,6 +1,7 @@
 import Treemap from "../components/Treemap";
 import Mapa from "../components/Mapa";
 import Header from "../components/Header";
+import TesteMapa from "../components/TesteMapa";
 function Home() {
   return (
     <>
@@ -13,7 +14,7 @@ function Home() {
           alignItems: "center"
         }}
       >
-        <Mapa />
+        <TesteMapa />
         <Treemap />
       </div>
     </>
