@@ -1,6 +1,7 @@
 import React, { useEffect, useRef } from "react";
 import L from "leaflet";
 import * as d3 from "d3";
+import TreeMapService from "../services/TreeMapService";
 
 import "leaflet/dist/leaflet.css";
 
@@ -26,6 +27,7 @@ function MapWithGeoJSON() {
 
     d3.json("https://raw.githubusercontent.com/eduardo2512/POC/main/estado.geojson").then(data => {
       geoJsonLayer.addData(data);
+      TreeMapService.obterJsonTreeMap(data);
     });
 
     return () => {
