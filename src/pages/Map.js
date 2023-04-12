@@ -46,9 +46,7 @@ const Map = () => {
         })
         .style("stroke", "black")
         .style("fill", "slateblue")
-        .on("click", function (d) {
-          console.log(d, "teste");
-        });
+        .on("click", function (d) {});
 
       // and to add the text labels
       svg

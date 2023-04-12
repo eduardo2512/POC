@@ -44,7 +44,6 @@ const Mapa = () => {
           return d.y0 + 20;
         }) // +20 to adjust position (lower)
         .text(function (d) {
-          console.log(d);
           return "ter";
         })
         .attr("font-size", "15px")

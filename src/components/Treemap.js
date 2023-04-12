@@ -16,9 +16,9 @@ const Treemap = () => {
       .append("g");
 
     // read json data
-    d3.json(
-      "https://raw.githubusercontent.com/holtzy/D3-graph-gallery/master/DATA/data_dendrogram_full.json"
-    ).then(function (data) {
+    d3.json("https://raw.githubusercontent.com/eduardo2512/POC/main/teste.json").then(function (
+      data
+    ) {
       // Give the data to this cluster layout:
       const root = d3.hierarchy(data).sum(function (d) {
         return d.value;
@@ -46,9 +46,7 @@ const Treemap = () => {
         })
         .style("stroke", "black")
         .style("fill", "slateblue")
-        .on("click", function (d) {
-          console.log(d, "teste");
-        });
+        .on("click", function (d) {});
 
       // and to add the text labels
       svg

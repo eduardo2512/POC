@@ -2,6 +2,7 @@ import Treemap from "../components/Treemap";
 import Mapa from "../components/Mapa";
 import Header from "../components/Header";
 import TesteMapa from "../components/TesteMapa";
+import MultipleSelectCheckmarks from "../components/MultipleSelectCheckmarks";
 function Home() {
   return (
     <>
@@ -15,6 +16,7 @@ function Home() {
         }}
       >
         <TesteMapa />
+        <MultipleSelectCheckmarks />
         <Treemap />
       </div>
     </>
