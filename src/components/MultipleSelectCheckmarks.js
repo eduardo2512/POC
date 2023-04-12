@@ -18,32 +18,20 @@ const MenuProps = {
   }
 };
 
-const names = [
-  "Oliver Hansen",
-  "Van Henry",
-  "April Tucker",
-  "Ralph Hubbard",
-  "Omar Alexander",
-  "Carlos Abbott",
-  "Miriam Wagner",
-  "Bradley Wilkerson",
-  "Virginia Andrews",
-  "Kelly Snyder"
-];
-
-export default function MultipleSelectCheckmarks() {
+export default function MultipleSelectCheckmarks({ listOptions, maxItensSelected }) {
   const [selectedOptions, setSelectedOptions] = useState([]);
 
   const handleChange = event => {
     const option = event.target.value;
 
-    if (selectedOptions.length < 2 || option.length < 2) setSelectedOptions(option);
+    if (selectedOptions.length < maxItensSelected || option.length < maxItensSelected)
+      setSelectedOptions(option);
   };
 
   const renderOption = option => {
     const isDisabled =
       !selectedOptions.find(selectedOption => selectedOption === option) &&
-      selectedOptions.length >= 2;
+      selectedOptions.length >= maxItensSelected;
     return (
       <MenuItem key={option} value={option} disabled={isDisabled}>
         <Checkbox checked={selectedOptions.indexOf(option) > -1} />
@@ -66,7 +54,7 @@ export default function MultipleSelectCheckmarks() {
           renderValue={selected => selected.join(", ")}
           MenuProps={MenuProps}
         >
-          {names.map(name => renderOption(name))}
+          {listOptions.map(option => renderOption(option))}
         </Select>
       </FormControl>
     </div>

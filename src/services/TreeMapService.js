@@ -6,6 +6,7 @@ class TreeMapService {
 
     const colunateste = "regiao";
     const teste = _.groupBy(propertiesGeoJson, colunateste);
+    console.log(teste);
     const teste2 = Object.entries(teste);
   }
 }
