@@ -66,6 +66,23 @@ const Treemap = () => {
         })
         .attr("font-size", "15px")
         .attr("fill", "white");
+
+      svg
+        .selectAll("vals")
+        .data(root.leaves())
+        .enter()
+        .append("text")
+        .attr("x", function (d) {
+          return d.x0 + 5;
+        }) // +10 to adjust position (more right)
+        .attr("y", function (d) {
+          return d.y0 + 35;
+        }) // +20 to adjust position (lower)
+        .text(function (d) {
+          return d.data.value;
+        })
+        .attr("font-size", "13px")
+        .attr("fill", "white");
     });
   }, []);
   return <div className="Treemap" ref={svgRef}></div>;

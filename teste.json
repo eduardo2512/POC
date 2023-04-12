@@ -1,0 +1,22 @@
+{
+   "children":[
+      {
+         "name":"mister_a",
+         "group":"A",
+         "value":28,
+         "colname":"level3"
+      },
+      {
+         "name":"mister_e",
+         "group":"C",
+         "value":14,
+         "colname":"level3"
+      },
+      {
+         "name":"mister_i",
+         "group":"B",
+         "value":10,
+         "colname":"level3"
+      }
+   ]
+}
