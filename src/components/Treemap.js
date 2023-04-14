@@ -1,12 +1,14 @@
 import React, { useEffect, useRef } from "react";
 import * as d3 from "d3";
+import TreeMapService from "../services/TreeMapService";
+
 const Treemap = () => {
   const svgRef = useRef();
 
   useEffect(() => {
     const margin = { top: 10, right: 10, bottom: 10, left: 10 },
-      width = 500 - margin.left - margin.right,
-      height = 500 - margin.top - margin.bottom;
+      width = 600 - margin.left - margin.right,
+      height = 600 - margin.top - margin.bottom;
 
     const svg = d3
       .select(svgRef.current)
@@ -16,11 +18,12 @@ const Treemap = () => {
       .append("g");
 
     // read json data
-    d3.json("https://raw.githubusercontent.com/eduardo2512/POC/main/teste.json").then(function (
+    d3.json("https://raw.githubusercontent.com/eduardo2512/POC/main/estado.geojson").then(function (
       data
     ) {
+      const dados = TreeMapService.obterJsonTreeMap(data, "sigla", "sigla", "pop2000");
       // Give the data to this cluster layout:
-      const root = d3.hierarchy(data).sum(function (d) {
+      const root = d3.hierarchy(dados).sum(function (d) {
         return d.value;
       }); // Here the size of each leave is given in the 'value' field in input data
 
@@ -63,23 +66,6 @@ const Treemap = () => {
           return d.data.name;
         })
         .attr("font-size", "15px")
-        .attr("fill", "white");
-
-      svg
-        .selectAll("vals")
-        .data(root.leaves())
-        .enter()
-        .append("text")
-        .attr("x", function (d) {
-          return d.x0 + 5;
-        }) // +10 to adjust position (more right)
-        .attr("y", function (d) {
-          return d.y0 + 35;
-        }) // +20 to adjust position (lower)
-        .text(function (d) {
-          return d.data.value;
-        })
-        .attr("font-size", "13px")
         .attr("fill", "white");
     });
   }, []);

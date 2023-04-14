@@ -1,6 +1,3 @@
-import _ from "lodash";
-import * as d3 from "d3";
-
 class HomeService {
   obterValoresFiltro(geoJson) {
     console.log(geoJson);
@@ -12,11 +9,12 @@ class HomeService {
     return keysGeoJson;
   }
 
-  obterGeoJson() {
-    d3.json("https://raw.githubusercontent.com/eduardo2512/POC/main/estado.geojson").then(data => {
-      console.log(data);
-      return data;
-    });
+  async obterGeoJson() {
+    return await fetch("https://raw.githubusercontent.com/eduardo2512/POC/main/teste.json")
+      .then(response => response.json())
+      .then(data => {
+        return data;
+      });
   }
 }
 

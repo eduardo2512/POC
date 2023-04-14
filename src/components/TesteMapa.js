@@ -19,7 +19,6 @@ function MapWithGeoJSON() {
 
     const geoJsonLayer = L.geoJSON(null, {
       style: feature => {
-        console.log(feature);
         const color = d3.interpolateInferno(Math.random());
         return { color };
       }
@@ -27,7 +26,6 @@ function MapWithGeoJSON() {
 
     d3.json("https://raw.githubusercontent.com/eduardo2512/POC/main/estado.geojson").then(data => {
       geoJsonLayer.addData(data);
-      TreeMapService.obterJsonTreeMap(data);
     });
 
     return () => {

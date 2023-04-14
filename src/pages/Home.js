@@ -6,10 +6,6 @@ import MultipleSelectCheckmarks from "../components/MultipleSelectCheckmarks";
 import HomeService from "../services/HomeService";
 import { useEffect, useState } from "react";
 function Home() {
-  const data = HomeService.obterGeoJson();
-  console.log(data);
-  const dadosFiltro = HomeService.obterValoresFiltro(data);
-
   return (
     <>
       <Header />
@@ -24,8 +20,14 @@ function Home() {
         <TesteMapa />
         <div>
           <div style={{ display: "flex" }}>
-            <MultipleSelectCheckmarks listOptions={dadosFiltro} maxItensSelected={2} />
-            <MultipleSelectCheckmarks listOptions={dadosFiltro} maxItensSelected={1} />
+            <MultipleSelectCheckmarks
+              listOptions={["teste1", "teste2", "teste3", "teste4"]}
+              maxItensSelected={2}
+            />
+            <MultipleSelectCheckmarks
+              listOptions={["teste1", "teste2", "teste3", "teste4"]}
+              maxItensSelected={1}
+            />
           </div>
 
           <Treemap />
